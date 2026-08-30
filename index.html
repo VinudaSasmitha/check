@@ -1269,31 +1269,44 @@ ${message}`;
 
         // WhatsApp Form Handler (077 976 5310)
         function sendToWhatsApp(e) {
-            e.preventDefault();
-            const fname = document.getElementById('fname').value;
-            const lname = document.getElementById('lname').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const company = document.getElementById('company').value;
-            const service = document.getElementById('service').value;
-            const budget = document.getElementById('budget').value;
-            const timeline = document.getElementById('timeline').value;
-            const method = document.getElementById('method').value;
-            const message = document.getElementById('message').value;
+    e.preventDefault();
 
-            const text = `*NEW WEBSITE INQUIRY*%0A%0A` +
-                `*Name:* ${fname} ${lname}%0A` +
-                `*Email:* ${email}%0A` +
-                `*Phone:* ${phone}%0A` +
-                `*Company:* ${company || 'N/A'}%0A` +
-                `*Service:* ${service}%0A` +
-                `*Budget:* ${budget}%0A` +
-                `*Timeline:* ${timeline}%0A` +
-                `*Preferred Contact:* ${method}%0A%0A` +
-                `*Message:* ${message}`;
+    // Get Input Values
+    const name = document.getElementById('name')?.value.trim() || '';
+    const phone = document.getElementById('phone')?.value.trim() || '';
+    const email = document.getElementById('email')?.value.trim() || '';
+    const service = document.getElementById('service')?.value || '';
+    const timeline = document.getElementById('timeline')?.value || '';
+    const method = document.getElementById('method')?.value || '';
+    const message = document.getElementById('message')?.value.trim() || '';
 
-            window.open(`https://wa.me/94779765310?text=${text}`, '_blank');
-        }
+    // Check if required fields exist
+    if (!name || !phone || !email || !service || !message) {
+        alert("කරුණාකර අවශ්‍ය සියලුම තොරතුරු ඇතුළත් කරන්න.");
+        return;
+    }
+
+    const whatsappNumber = "94779765310";
+
+    const formattedText = 
+`📥 *NEW PROJECT INQUIRY*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+✉️ *Email:* ${email}
+
+🛠️ *Service Interested:* ${service}
+⏳ *Timeline:* ${timeline}
+💬 *Preferred Contact:* ${method}
+
+📝 *Project Details:*
+${message}`;
+
+    const encodedMessage = encodeURIComponent(formattedText);
+
+    // Redirect directly (Fixes Popup Blocker Issues)
+    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+}
 
         // Animated Statistics Counters
         const counters = document.querySelectorAll('.counter');
