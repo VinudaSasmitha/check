@@ -555,53 +555,162 @@
     </div>
 
     <!-- Featured Projects / Case Studies Section -->
-    <section id="projects" class="py-24 bg-white border-y border-brand-container px-6 md:px-20 max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-            <span class="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-2">Success Stories</span>
-            <h2 class="font-sora font-semibold text-3xl md:text-4xl">Featured Projects &amp; Case Studies</h2>
-            <p class="text-brand-muted text-base mt-2">Explore how we helped brands solve complex challenges and elevate their presence.</p>
-        </div>
+    <!-- Featured Projects Section -->
+<section id="projects" class="py-24 bg-white border-y border-brand-container px-6 md:px-20 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-2">Portfolio</span>
+        <h2 class="font-sora font-semibold text-3xl md:text-4xl text-brand-text">Featured Projects</h2>
+        <p class="text-brand-muted text-base mt-2">Explore our specialized solutions across branding, content creation, and store management.</p>
+    </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-brand-bg rounded-3xl border border-brand-container p-8 space-y-6 hover-lift" data-aos="fade-up" data-aos-delay="100">
-                <div class="h-56 bg-gradient-to-br from-rose-100 to-rose-50 rounded-2xl flex items-center justify-center border border-brand-border/40 px-4 text-center">
-                    <span class="font-sora font-extrabold text-xl sm:text-2xl text-brand-primary">URBAN APPAREL REBRAND</span>
-                </div>
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Category: Brand Identity &amp; Merchandise</span>
-                    <h3 class="font-sora font-bold text-2xl text-brand-text mt-1">Urban Apparel Line Rollout</h3>
-                </div>
-                <div class="space-y-3 text-xs text-brand-muted">
-                    <p><strong class="text-brand-text">Client:</strong> Urban Streetwear Co.</p>
-                    <p><strong class="text-brand-text">Challenge:</strong> Stand out in a crowded urban apparel market with distinct headwear and graphic tees.</p>
-                    <p><strong class="text-brand-text">Solution:</strong> Designed custom 240 GSM tees and structured snapback caps with high-density puff printing.</p>
-                    <p><strong class="text-brand-text">Result:</strong> 100% stock sold out within 3 weeks of launch with a 45% increase in online engagement.</p>
-                </div>
-                <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-brand-primary uppercase tracking-wider hover:underline">
-                    View Case Study Details &rarr;
-                </a>
+    <!-- Responsive Layout: Horizontal Scroll on Mobile, 3-Column Grid on Laptop -->
+    <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-6 md:pb-0 scrollbar-none">
+        
+        <!-- Card 1: Logo Projects -->
+        <div onclick="openProjectModal('logo')" class="snap-center shrink-0 w-[85%] sm:w-[70%] md:w-full bg-brand-bg rounded-3xl border border-brand-container p-6 hover-lift cursor-pointer flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-52 bg-gradient-to-br from-rose-100 to-rose-50 rounded-2xl flex items-center justify-center border border-rose-200/50 p-4 mb-6 group-hover:scale-[1.02] transition-transform duration-300">
+                <span class="font-sora font-extrabold text-xl text-brand-primary text-center">LOGO PROJECTS</span>
             </div>
-
-            <div class="bg-brand-bg rounded-3xl border border-brand-container p-8 space-y-6 hover-lift" data-aos="fade-up" data-aos-delay="200">
-                <div class="h-56 bg-gradient-to-br from-zinc-200 to-zinc-100 rounded-2xl flex items-center justify-center border border-brand-container px-4 text-center">
-                    <span class="font-sora font-extrabold text-xl sm:text-2xl text-zinc-700">CORPORATE GIFTING SUITE</span>
-                </div>
-                <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Category: Corporate Merchandise &amp; Packaging</span>
-                    <h3 class="font-sora font-bold text-2xl text-brand-text mt-1">Executive Merchandise Kit</h3>
-                </div>
-                <div class="space-y-3 text-xs text-brand-muted">
-                    <p><strong class="text-brand-text">Client:</strong> Horizon Tech Solutions</p>
-                    <p><strong class="text-brand-text">Challenge:</strong> Create a premium onboarding kit for C-suite clients and global partners.</p>
-                    <p><strong class="text-brand-text">Solution:</strong> Developed tailored pique polo shirts, custom embossed notebooks, and rigid magnetic gift boxes.</p>
-                    <p><strong class="text-brand-text">Result:</strong> Elevated brand reputation and 98% positive feedback from recipient stakeholders.</p>
-                </div>
-                <a href="#contact" class="inline-flex items-center gap-2 text-xs font-bold text-brand-primary uppercase tracking-wider hover:underline">
-                    View Case Study Details &rarr;
-                </a>
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Brand Identity</span>
+                <h3 class="font-sora font-bold text-xl text-brand-text mt-1">Logo &amp; Visual Design</h3>
+                <p class="text-brand-muted text-xs mt-2 leading-relaxed">Crafting unique, memorable logo suites and complete brand identity packages.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-container flex items-center justify-between text-xs font-bold text-brand-primary uppercase tracking-wider">
+                <span>View Gallery</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </div>
         </div>
-    </section>
+
+        <!-- Card 2: Digital Product Posts -->
+        <div onclick="openProjectModal('digital')" class="snap-center shrink-0 w-[85%] sm:w-[70%] md:w-full bg-brand-bg rounded-3xl border border-brand-container p-6 hover-lift cursor-pointer flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-52 bg-gradient-to-br from-zinc-200 to-zinc-100 rounded-2xl flex items-center justify-center border border-zinc-300/50 p-4 mb-6 group-hover:scale-[1.02] transition-transform duration-300">
+                <span class="font-sora font-extrabold text-xl text-zinc-700 text-center">DIGITAL PRODUCT POSTS</span>
+            </div>
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Social Media</span>
+                <h3 class="font-sora font-bold text-xl text-brand-text mt-1">Digital Marketing Creatives</h3>
+                <p class="text-brand-muted text-xs mt-2 leading-relaxed">High-converting social media posts, promotional graphics, and ad creatives.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-container flex items-center justify-between text-xs font-bold text-brand-primary uppercase tracking-wider">
+                <span>View Gallery</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+        </div>
+
+        <!-- Card 3: E-commerce Management -->
+        <div onclick="openProjectModal('ecommerce')" class="snap-center shrink-0 w-[85%] sm:w-[70%] md:w-full bg-brand-bg rounded-3xl border border-brand-container p-6 hover-lift cursor-pointer flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="300">
+            <div class="h-52 bg-gradient-to-br from-emerald-100 to-teal-50 rounded-2xl flex items-center justify-center border border-teal-200/50 p-4 mb-6 group-hover:scale-[1.02] transition-transform duration-300">
+                <span class="font-sora font-extrabold text-xl text-teal-800 text-center">E-COMMERCE MANAGEMENT</span>
+            </div>
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-primary">Store Operations</span>
+                <h3 class="font-sora font-bold text-xl text-brand-text mt-1">E-Commerce Solutions</h3>
+                <p class="text-brand-muted text-xs mt-2 leading-relaxed">Full online store setup, product catalog optimization, and sales scaling.</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-container flex items-center justify-between text-xs font-bold text-brand-primary uppercase tracking-wider">
+                <span>View Gallery</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Auto Slideshow Popup Modal -->
+<div id="projectModal" class="fixed inset-0 bg-black/70 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative shadow-2xl transform transition-all">
+        <!-- Close Button -->
+        <button onclick="closeProjectModal()" class="absolute top-5 right-5 text-gray-400 hover:text-black text-2xl font-bold transition-colors w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200">&times;</button>
+        
+        <h3 id="modalTitle" class="font-sora font-bold text-2xl text-brand-text mb-4"></h3>
+
+        <!-- Slideshow Frame -->
+        <div class="relative w-full h-64 sm:h-96 rounded-2xl overflow-hidden bg-gray-100 border border-gray-200">
+            <img id="modalImage" src="" alt="Project Showcase" class="w-full h-full object-cover transition-opacity duration-500">
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="mt-4 flex justify-center items-center gap-2" id="modalDots"></div>
+    </div>
+</div>
+
+<!-- JavaScript for Modal & Continuous Image Slider -->
+<script>
+    const projectGalleries = {
+        logo: {
+            title: "Logo Projects",
+            images: [
+                "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80"
+            ]
+        },
+        digital: {
+            title: "Digital Product Posts",
+            images: [
+                "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=80"
+            ]
+        },
+        ecommerce: {
+            title: "E-Commerce Management",
+            images: [
+                "https://images.unsplash.com/photo-1556742049-0a67e57263c3?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=900&q=80",
+                "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=900&q=80"
+            ]
+        }
+    };
+
+    let intervalId = null;
+    let currentSlide = 0;
+
+    function openProjectModal(key) {
+        const gallery = projectGalleries[key];
+        if (!gallery) return;
+
+        document.getElementById('modalTitle').innerText = gallery.title;
+        const imgElement = document.getElementById('modalImage');
+        const dotsContainer = document.getElementById('modalDots');
+        
+        currentSlide = 0;
+        imgElement.src = gallery.images[currentSlide];
+
+        // Dots Generator
+        dotsContainer.innerHTML = gallery.images.map((_, i) => 
+            `<span id="dot-${i}" class="h-2 rounded-full transition-all duration-300 ${i === 0 ? 'w-6 bg-brand-primary' : 'w-2 bg-gray-300'}"></span>`
+        ).join('');
+
+        document.getElementById('projectModal').classList.remove('hidden');
+
+        // Automatic Image Changing Animation (1.2-second gap)
+        if (intervalId) clearInterval(intervalId);
+        intervalId = setInterval(() => {
+            currentSlide = (currentSlide + 1) % gallery.images.length;
+            
+            imgElement.classList.add('opacity-0');
+            setTimeout(() => {
+                imgElement.src = gallery.images[currentSlide];
+                imgElement.classList.remove('opacity-0');
+            }, 200);
+
+            // Update dots indicator
+            gallery.images.forEach((_, i) => {
+                const dot = document.getElementById(`dot-${i}`);
+                if (dot) {
+                    dot.className = `h-2 rounded-full transition-all duration-300 ${i === currentSlide ? 'w-6 bg-brand-primary' : 'w-2 bg-gray-300'}`;
+                }
+            });
+        }, 1200);
+    }
+
+    function closeProjectModal() {
+        document.getElementById('projectModal').classList.add('hidden');
+        if (intervalId) clearInterval(intervalId);
+    }
+</script>
 
     <!-- About Us Section -->
     <section id="about" class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
