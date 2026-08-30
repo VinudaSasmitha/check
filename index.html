@@ -795,121 +795,145 @@
 
     <!-- Contact Form & Direct WhatsApp Integration -->
     <section id="contact" class="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-12">
-            <div class="lg:col-span-5 space-y-8" data-aos="fade-right">
-                <div>
-                    <span class="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-2">Direct Contact</span>
-                    <h2 class="font-sora font-semibold text-3xl md:text-4xl">Let's Build Your Project</h2>
-                </div>
+    <div class="grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-5 space-y-8" data-aos="fade-right">
+            <div>
+                <span class="text-brand-primary font-bold text-xs uppercase tracking-widest block mb-2">Direct Contact</span>
+                <h2 class="font-sora font-semibold text-3xl md:text-4xl">Let's Build Your Project</h2>
+            </div>
 
-                <div class="space-y-6 text-sm text-brand-muted">
-                    <div class="p-6 bg-white rounded-2xl border border-brand-container">
-                        <strong class="block text-brand-text font-bold mb-1 text-base">Visit Our Office</strong>
-                        <p>No. 17, Kirimandala Mawatha, Nawala, Sri Lanka</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-2xl border border-brand-container">
-                        <strong class="block text-brand-text font-bold mb-1 text-base">Direct Line &amp; Email</strong>
-                        <p>Phone: 077 976 5310</p>
-                        <p>Email: info@storiesandconcepts.com</p>
-                    </div>
+            <div class="space-y-6 text-sm text-brand-muted">
+                <div class="p-6 bg-white rounded-2xl border border-brand-container">
+                    <strong class="block text-brand-text font-bold mb-1 text-base">Visit Our Office</strong>
+                    <p>No. 17, Kirimandala Mawatha, Nawala, Sri Lanka</p>
                 </div>
-
-                <div class="pt-2">
-                    <a href="https://wa.me/94779765310" target="_blank" class="inline-flex items-center gap-3 bg-[#25D366] text-white font-bold px-8 py-4 rounded-full hover:opacity-95 transition-all shadow-lg">
-                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                        <span>Chat via WhatsApp </span>
-                    </a>
+                <div class="p-6 bg-white rounded-2xl border border-brand-container">
+                    <strong class="block text-brand-text font-bold mb-1 text-base">Direct Line &amp; Email</strong>
+                    <p>Phone: 077 976 5310</p>
+                    <p>Email: info@storiesandconcepts.com</p>
                 </div>
             </div>
 
-            <div class="lg:col-span-7 bg-white p-6 sm:p-8 md:p-10 rounded-3xl border border-brand-container shadow-sm" data-aos="fade-left">
-                <form id="contactForm" onsubmit="sendToWhatsApp(event)" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">First Name *</label>
-                            <input type="text" id="fname" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Last Name *</label>
-                            <input type="text" id="lname" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Email Address *</label>
-                            <input type="email" id="email" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Contact Number *</label>
-                            <input type="tel" id="phone" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Company Name</label>
-                            <input type="text" id="company" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Service Interested In *</label>
-                            <select id="service" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors text-brand-text">
-                                <option value="">Select a service</option>
-                                <option value="Brand Strategy">Brand Strategy</option>
-                                <option value="Graphic Design">Graphic Design</option>
-                                <option value="Social Media Management">Social Media Management</option>
-                                <option value="Product Development">Product Development</option>
-                                <option value="Custom Merchandise">Custom Merchandise</option>
-                                <option value="Packaging Design">Packaging Design</option>
-                                <option value="Marketing Campaigns">Marketing Campaigns</option>
-                                <option value="Event Branding">Event Branding</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Budget Range</label>
-                            <select id="budget" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                                <option value="Flexible">Select Budget</option>
-                                <option value="Under $500">Under $500</option>
-                                <option value="$500 - $1,500">$500 - $1,500</option>
-                                <option value="$1,500 - $5,000">$1,500 - $5,000</option>
-                                <option value="$5,000+">$5,000+</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Timeline</label>
-                            <select id="timeline" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                                <option value="Immediate">Immediate</option>
-                                <option value="1-2 Weeks">1-2 Weeks</option>
-                                <option value="1 Month">1 Month</option>
-                                <option value="Flexible">Flexible</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Preferred Contact</label>
-                            <select id="method" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
-                                <option value="WhatsApp">WhatsApp</option>
-                                <option value="Phone Call">Phone Call</option>
-                                <option value="Email">Email</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Project Details / Message *</label>
-                        <textarea id="message" rows="4" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors" placeholder="Tell us about your brand vision or requirements..."></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full bg-brand-primary hover:bg-brand-dark text-white font-bold py-4 rounded-full transition-all soft-red-shadow flex items-center justify-center gap-2">
-                        <span>Send to WhatsApp </span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </button>
-                </form>
+            <div class="pt-2">
+                <a href="https://wa.me/94779765310" target="_blank" class="inline-flex items-center gap-3 bg-[#25D366] text-white font-bold px-8 py-4 rounded-full hover:opacity-95 transition-all shadow-lg">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>Chat via WhatsApp</span>
+                </a>
             </div>
         </div>
-    </section>
+
+        <div class="lg:col-span-7 bg-white p-6 sm:p-8 md:p-10 rounded-3xl border border-brand-container shadow-sm" data-aos="fade-left">
+            <form id="contactForm" onsubmit="sendToWhatsApp(event)" class="space-y-6">
+                <!-- Name & Contact Number -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Your Name *</label>
+                        <input type="text" id="name" required placeholder="John Doe" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Contact Number *</label>
+                        <input type="tel" id="phone" required placeholder="0771234567" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
+                    </div>
+                </div>
+
+                <!-- Email & Service -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Email Address *</label>
+                        <input type="email" id="email" required placeholder="john@example.com" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Service Interested In *</label>
+                        <select id="service" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors text-brand-text">
+                            <option value="">Select a service</option>
+                            <option value="Brand Strategy">Brand Strategy</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Social Media Management">Social Media Management</option>
+                            <option value="Product Development">Product Development</option>
+                            <option value="Custom Merchandise">Custom Merchandise</option>
+                            <option value="Packaging Design">Packaging Design</option>
+                            <option value="Marketing Campaigns">Marketing Campaigns</option>
+                            <option value="Event Branding">Event Branding</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Timeline & Preferred Contact -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Timeline</label>
+                        <select id="timeline" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
+                            <option value="Immediate">Immediate</option>
+                            <option value="1-2 Weeks">1-2 Weeks</option>
+                            <option value="1 Month">1 Month</option>
+                            <option value="Flexible">Flexible</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Preferred Contact Method</label>
+                        <select id="method" class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors">
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="Phone Call">Phone Call</option>
+                            <option value="Email">Email</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Project Details -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Project Details / Message *</label>
+                    <textarea id="message" rows="4" required class="w-full bg-brand-bg border border-brand-container rounded-xl px-4 py-3 focus:outline-none focus:border-brand-primary text-sm transition-colors" placeholder="Tell us about your brand vision or requirements..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full bg-brand-primary hover:bg-brand-dark text-white font-bold py-4 rounded-full transition-all soft-red-shadow flex items-center justify-center gap-2">
+                    <span>Send via WhatsApp</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript Function for Form Submission to WhatsApp -->
+<script>
+    function sendToWhatsApp(e) {
+        e.preventDefault();
+
+        // Get Input Values
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const service = document.getElementById('service').value;
+        const timeline = document.getElementById('timeline').value;
+        const method = document.getElementById('method').value;
+        const message = document.getElementById('message').value.trim();
+
+        // Target WhatsApp Number
+        const whatsappNumber = "94779765310";
+
+        // Structured WhatsApp Message Formatting
+        const formattedText = 
+`📥 *NEW PROJECT INQUIRY*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+✉️ *Email:* ${email}
+
+🛠️ *Service Interested:* ${service}
+⏳ *Timeline:* ${timeline}
+💬 *Preferred Contact:* ${method}
+
+📝 *Project Details:*
+${message}`;
+
+        // URL Encoding
+        const encodedMessage = encodeURIComponent(formattedText);
+
+        // Open WhatsApp Web/App
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    }
+</script>
 
     <!-- AI Chatbot Floating Widget (desktop/tablet — phones use the bottom nav trigger) -->
     <div class="fixed bottom-6 right-6 z-50 hidden md:block">
