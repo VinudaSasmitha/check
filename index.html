@@ -1,40 +1,33 @@
-```html
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ILT Retail.lk | Sportswear & Custom Uniform Manufacturer</title>
-
-    <!-- Tailwind -->
+    <title>ILT Retail.lk | Enterprise Sportswear & Custom Apparel Manufacturing</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Swiper -->
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- Google Font -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brandViolet: '#4F46E5',
+                        brandViolet: '#4F46E5',        /* Synthetix Primary Violet/Indigo */
                         brandVioletDark: '#4338CA',
                         brandVioletLight: '#EEF2FF',
                         brandPurple: '#6366F1',
-                        accentEmerald: '#10B981',
-                        surfaceCanvas: '#FAFAFC',
+                        accentEmerald: '#10B981',      /* Success / Active Badge Green */
+                        accentGold: '#F59E0B',         /* Highlights */
+                        surfaceCanvas: '#FAFAFC',      /* Modern Soft Background */
+                        surfaceCard: '#FFFFFF',
                         textPrimary: '#0F172A',
                         textSecondary: '#64748B'
                     },
@@ -51,1829 +44,740 @@
             background-color: #FAFAFC;
             font-family: 'Inter', sans-serif;
             color: #0F172A;
-            overflow-x: hidden;
         }
 
-        /* Cards */
+        /* Glassmorphism & UI Accents inspired by Synthetix AI Design */
         .synthetix-card {
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.95);
             border: 1px solid #E2E8F0;
-            box-shadow:
-                0 4px 20px -2px rgba(15, 23, 42, 0.04),
-                0 2px 6px -1px rgba(15, 23, 42, 0.02);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .synthetix-card:hover {
             border-color: #CBD5E1;
-            box-shadow:
-                0 20px 30px -10px rgba(79, 70, 229, 0.10),
-                0 10px 15px -5px rgba(15, 23, 42, 0.04);
-            transform: translateY(-3px);
+            box-shadow: 0 20px 30px -10px rgba(79, 70, 229, 0.08), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
+            transform: translateY(-2px);
         }
 
-        /* Hero Glass */
         .dashboard-glass {
-            background: linear-gradient(
-                135deg,
-                rgba(255,255,255,0.9),
-                rgba(248,250,252,0.95)
-            );
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,250,252,0.95) 100%);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(226,232,240,0.8);
+            border: 1px solid rgba(226, 232, 240, 0.8);
         }
 
-        /* Swiper */
-        .swiper-button-next,
-        .swiper-button-prev {
+        /* Hero Swiper Navigation Customization */
+        .swiper-button-next, .swiper-button-prev {
             color: #4F46E5;
-            background: white;
+            background: #FFFFFF;
             width: 42px;
             height: 42px;
-            border-radius: 999px;
-            box-shadow: 0 8px 20px rgba(0,0,0,.12);
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             border: 1px solid #E2E8F0;
-            transition: .25s ease;
+            transition: all 0.2s ease;
         }
-
-        .swiper-button-next:hover,
-        .swiper-button-prev:hover {
+        .swiper-button-next:hover, .swiper-button-prev:hover {
             background: #4F46E5;
-            color: white;
+            color: #FFFFFF;
+            border-color: #4F46E5;
         }
-
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
+        .swiper-button-next::after, .swiper-button-prev::after {
             font-size: 14px;
-            font-weight: 900;
+            font-weight: 800;
         }
-
         .swiper-pagination-bullet-active {
             background: #4F46E5 !important;
-            width: 26px;
-            border-radius: 10px;
-        }
-
-        /* ================= MOBILE BOTTOM NAV ================= */
-
-        .mobile-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 60;
-            background: rgba(255,255,255,.96);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid #E2E8F0;
-            padding: 7px 4px calc(7px + env(safe-area-inset-bottom));
-            box-shadow: 0 -10px 30px rgba(15,23,42,.08);
-        }
-
-        .mobile-nav-item {
-            position: relative;
-            flex: 1;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 3px;
-            padding: 7px 2px;
-            border-radius: 14px;
-            color: #64748B;
-            transition: all .25s ease;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .mobile-nav-item i {
-            font-size: 17px;
-            transition: all .25s ease;
-        }
-
-        .mobile-nav-item span {
-            font-size: 9px;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .mobile-nav-item.active {
-            color: #4F46E5;
-            background: #EEF2FF;
-        }
-
-        .mobile-nav-item.active i {
-            transform: translateY(-1px) scale(1.08);
-        }
-
-        .mobile-nav-item:active {
-            transform: scale(.92);
-        }
-
-        /* MORE DRAWER */
-        .more-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(15,23,42,.45);
-            backdrop-filter: blur(4px);
-            z-index: 70;
-            opacity: 0;
-            visibility: hidden;
-            transition: all .3s ease;
-        }
-
-        .more-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .more-drawer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 80;
-            background: white;
-            border-radius: 28px 28px 0 0;
-            padding: 12px 18px calc(25px + env(safe-area-inset-bottom));
-            transform: translateY(110%);
-            transition: transform .4s cubic-bezier(.22,1,.36,1);
-            box-shadow: 0 -20px 50px rgba(15,23,42,.18);
-        }
-
-        .more-drawer.active {
-            transform: translateY(0);
-        }
-
-        .drawer-handle {
-            width: 42px;
-            height: 5px;
-            background: #CBD5E1;
-            border-radius: 999px;
-            margin: 0 auto 18px;
-        }
-
-        .drawer-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            border-radius: 16px;
-            transition: .2s ease;
-            color: #334155;
-            font-size: 14px;
-            font-weight: 700;
-        }
-
-        .drawer-item:hover,
-        .drawer-item:active {
-            background: #F1F5F9;
-        }
-
-        .drawer-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #EEF2FF;
-            color: #4F46E5;
-        }
-
-        /* Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: all .7s ease;
-        }
-
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Mobile spacing */
-        @media (max-width: 767px) {
-            body {
-                padding-bottom: 78px;
-            }
-
-            .swiper-button-next,
-            .swiper-button-prev {
-                width: 34px;
-                height: 34px;
-            }
-
-            .swiper-button-next::after,
-            .swiper-button-prev::after {
-                font-size: 11px;
-            }
+            width: 28px;
+            border-radius: 6px;
         }
     </style>
 </head>
+<body class="antialiased selection:bg-brandViolet selection:text-white pb-20 sm:pb-0">
 
-<body class="antialiased selection:bg-brandViolet selection:text-white">
-
-    <!-- TOP ANNOUNCEMENT -->
-    <div class="bg-slate-900 text-slate-300 text-xs py-2.5 px-4 text-center border-b border-slate-800">
-        <div class="flex justify-center items-center gap-2 flex-wrap">
-            <span class="inline-flex items-center gap-1.5 bg-brandViolet text-white text-[9px] font-extrabold px-2.5 py-1 rounded-full uppercase">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Islandwide Delivery
-            </span>
-
-            <span class="font-medium text-slate-200">
-                Direct Factory Apparel Manufacturing for Schools, Clubs & Corporate Teams.
-            </span>
-
-            <a href="#contact"
-                class="hidden md:inline-flex text-indigo-200 hover:text-white font-bold underline">
-                Request Quotation →
-            </a>
-        </div>
+    <div class="bg-slate-900 text-slate-300 text-xs py-2.5 px-4 text-center border-b border-slate-800 flex justify-center items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 bg-brandViolet text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Production Ready
+        </span>
+        <span class="font-medium text-slate-200">Custom Teamwear, Institutional Gear & Sublimated Sportswear Manufacturing.</span>
+        <a href="#contact" class="hidden md:inline-flex items-center gap-1 text-brandVioletLight hover:text-white font-bold underline ml-2 transition-colors">
+            Request Free Sample <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
     </div>
 
-
-    <!-- DESKTOP HEADER -->
-    <header class="sticky top-0 z-40 bg-white/85 backdrop-blur-xl border-b border-slate-200">
-
+    <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md text-slate-800 border-b border-slate-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-
-            <!-- Logo -->
+            
             <a href="#home" class="flex items-center gap-3 group">
-
-                <div class="bg-brandViolet p-2.5 rounded-xl shadow-md group-hover:scale-105 transition">
-                    <span class="font-black text-xl text-white">ILT</span>
+                <div class="bg-brandViolet p-2.5 rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                    <span class="font-black text-xl text-white tracking-tighter">ILT</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mx-1"></span>
                 </div>
-
                 <div class="flex flex-col">
-                    <span class="text-xl font-black tracking-tight text-slate-900">
+                    <span class="text-xl font-black tracking-tight leading-none text-slate-900">
                         RETAIL<span class="text-brandViolet">.LK</span>
                     </span>
-
-                    <span class="text-[9px] text-slate-500 tracking-widest uppercase font-bold">
-                        Institute of Lean Technologies
-                    </span>
+                    <span class="text-[10px] text-slate-500 tracking-widest uppercase font-semibold mt-0.5">Apparel Engineering Platform</span>
                 </div>
-
             </a>
 
-
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
-
-                <a href="#home" class="hover:text-brandViolet transition">
-                    Home
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#home" class="hover:text-brandViolet transition-colors">Platform</a>
+                <a href="#catalog" class="text-slate-900 font-bold transition-colors flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-brandViolet"></span> Products Showcase
                 </a>
-
-                <a href="#catalog" class="hover:text-brandViolet transition">
-                    Products
-                </a>
-
-                <a href="#custom-process" class="hover:text-brandViolet transition">
-                    Order Process
-                </a>
-
-                <a href="#about" class="hover:text-brandViolet transition">
-                    About
-                </a>
-
-                <a href="#contact" class="hover:text-brandViolet transition">
-                    Contact
-                </a>
-
+                <a href="#about" class="hover:text-brandViolet transition-colors">Architecture</a>
+                <a href="#contact" class="hover:text-brandViolet transition-colors">Contact</a>
             </nav>
 
-
-            <!-- CTA -->
-            <div class="flex gap-2">
-
-                <a href="https://wa.me/94771234567"
-                    target="_blank"
-                    class="hidden sm:flex bg-slate-100 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-sm font-bold items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-emerald-600"></i>
-                    WhatsApp
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/94771234567" target="_blank" class="hidden sm:inline-flex bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm items-center gap-2 transition-all border border-slate-200">
+                    <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+                    <span>WhatsApp Sales</span>
                 </a>
-
-                <a href="#contact"
-                    class="bg-brandViolet hover:bg-brandVioletDark text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md transition">
-                    Get Quote
+                <a href="#contact" class="bg-brandViolet hover:bg-brandVioletDark text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm shadow-md shadow-brandViolet/20 transition-all">
+                    Start 14-Day Order
                 </a>
-
             </div>
-
         </div>
-
     </header>
 
-
-    <!-- HERO -->
-    <section id="home"
-        class="relative bg-surfaceCanvas pt-10 pb-16 lg:pt-14 lg:pb-20 overflow-hidden">
-
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-80 bg-indigo-100/50 blur-3xl rounded-full"></div>
+    <section id="home" class="relative bg-surfaceCanvas pt-8 pb-16 lg:pt-12 lg:pb-24 border-b border-slate-200/60 overflow-hidden">
+        
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-indigo-100/50 via-purple-50/30 to-transparent pointer-events-none rounded-full blur-3xl"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="flex items-center justify-center md:justify-start gap-2 mb-6">
+                <span class="inline-flex items-center gap-1.5 bg-brandVioletLight text-brandViolet font-extrabold text-xs px-3 py-1 rounded-full border border-indigo-200">
+                    <i class="fa-solid fa-layer-group text-[10px]"></i> ILT Apparel Engine 4.0 Released
+                </span>
+                <span class="text-xs text-slate-500 font-medium hidden sm:inline-block">• Autonomous Enterprise Order Pipelines</span>
+            </div>
 
-            <div class="grid lg:grid-cols-12 gap-10 items-center">
-
-                <!-- Text -->
-                <div class="lg:col-span-6 text-center lg:text-left reveal">
-
-                    <span class="inline-flex items-center gap-2 bg-brandVioletLight text-brandViolet font-bold text-xs px-3 py-1.5 rounded-full border border-indigo-200 mb-6">
-                        <i class="fa-solid fa-shirt"></i>
-                        High-Performance Sportswear
-                    </span>
-
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight">
-
-                        Custom Sports Kits
-
-                        <br>
-
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandViolet via-purple-600 to-indigo-600">
-                            Tailored for Champions
-                        </span>
-
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 text-center md:text-left">
+                    <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.15]">
+                        Orchestrate Team Apparel at <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandViolet via-purple-600 to-indigo-600">Hyperscale</span>
                     </h1>
-
-                    <p class="text-slate-600 text-base sm:text-lg mt-6 mb-8 leading-relaxed">
-
-                        Engineered by the Institute of Lean Technologies. We manufacture durable,
-                        high-breathability sublimated jerseys, sports kits and institutional apparel
-                        for teams across Sri Lanka.
-
+                    
+                    <p class="text-slate-600 text-base sm:text-lg mt-6 mb-8 leading-relaxed font-normal">
+                        Deploy production-grade sportswear manufacturing pipelines, stream real-time custom sublimation designs, and automate institutional apparel fulfillment with zero downtime.
                     </p>
 
-                    <div class="flex flex-wrap justify-center lg:justify-start gap-3">
-
-                        <a href="#contact"
-                            class="bg-brandViolet hover:bg-brandVioletDark text-white font-bold px-6 py-3.5 rounded-xl text-sm shadow-lg transition flex items-center gap-2">
-
-                            Start Bulk Order
-
-                            <i class="fa-solid fa-arrow-right"></i>
-
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                        <a href="#contact" class="bg-brandViolet hover:bg-brandVioletDark text-white font-extrabold px-7 py-4 rounded-xl text-sm shadow-xl shadow-brandViolet/25 flex items-center gap-3 transition-all">
+                            <span>Start Bulk Order Pipeline</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
-
-                        <a href="tel:+94771234567"
-                            class="bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 font-bold px-6 py-3.5 rounded-xl text-sm transition">
-
-                            <i class="fa-solid fa-phone text-brandViolet mr-1"></i>
-
-                            Call Sales
-
+                        <a href="#about" class="bg-white hover:bg-slate-50 text-slate-700 font-bold px-7 py-4 rounded-xl text-sm border border-slate-200 shadow-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-circle-play text-brandViolet"></i>
+                            <span>View Architecture</span>
                         </a>
-
                     </div>
 
+                    <div class="mt-10 pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center md:justify-start gap-6 text-xs text-slate-500">
+                        <div class="flex items-center gap-1 text-amber-500 font-black">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span class="text-slate-700 ml-1">4.9/5</span>
+                        </div>
+                        <span>by 120+ Premier Teams & Academic Institutions</span>
+                    </div>
                 </div>
 
-
-                <!-- Slider -->
-                <div class="lg:col-span-6 reveal">
-
-                    <div class="dashboard-glass rounded-3xl p-3 shadow-xl">
+                <div class="lg:col-span-6">
+                    <div class="dashboard-glass rounded-3xl p-4 shadow-2xl relative">
+                        
+                        <div class="flex items-center justify-between pb-3 px-3 mb-3 border-b border-slate-200/80 text-xs font-semibold text-slate-600">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                <span>Factory Cluster: Active</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-[11px] text-slate-400">
+                                <span>Capacity: 84.2k units/mo</span>
+                                <span class="bg-indigo-50 text-brandViolet px-2 py-0.5 rounded font-bold">14 Days Delivery</span>
+                            </div>
+                        </div>
 
                         <div class="swiper heroSlider rounded-2xl overflow-hidden">
-
                             <div class="swiper-wrapper">
-
-                                <!-- Slide 1 -->
+                                
                                 <div class="swiper-slide relative">
-
-                                    <img
-                                        src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=85"
-                                        alt="Cricket Sportswear"
-                                        class="w-full h-[300px] sm:h-[380px] object-cover">
-
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-
-                                        <span class="bg-brandViolet px-3 py-1 rounded-lg text-[10px] font-bold w-max mb-2">
-                                            PRO SUBLIMATION
-                                        </span>
-
-                                        <h3 class="text-xl font-bold">
-                                            Custom Cricket Match Kits
-                                        </h3>
-
-                                        <p class="text-xs text-slate-300 mt-1">
-                                            Lightweight micro-mesh fabric for maximum mobility.
-                                        </p>
-
+                                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=80" alt="Cricket Match Jersey" class="w-full h-[320px] sm:h-[380px] object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
+                                        <span class="bg-brandViolet text-white font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md w-max mb-2">Pro Sublimation</span>
+                                        <h3 class="text-xl font-bold">Custom Cricket Match Kits</h3>
+                                        <p class="text-xs text-slate-300 mt-1">High-breathability lightweight micro-mesh engineered for maximum agility.</p>
                                     </div>
-
                                 </div>
 
-
-                                <!-- Slide 2 -->
                                 <div class="swiper-slide relative">
-
-                                    <img
-                                        src="https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=1200&q=85"
-                                        alt="Rugby Apparel"
-                                        class="w-full h-[300px] sm:h-[380px] object-cover">
-
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-
-                                        <span class="bg-emerald-600 px-3 py-1 rounded-lg text-[10px] font-bold w-max mb-2">
-                                            HEAVY DUTY
-                                        </span>
-
-                                        <h3 class="text-xl font-bold">
-                                            Professional Rugby Wear
-                                        </h3>
-
-                                        <p class="text-xs text-slate-300 mt-1">
-                                            Reinforced stitching built for high-impact performance.
-                                        </p>
-
+                                    <img src="https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=1200&q=80" alt="Rugby Wear" class="w-full h-[320px] sm:h-[380px] object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
+                                        <span class="bg-emerald-600 text-white font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md w-max mb-2">Impact Ready</span>
+                                        <h3 class="text-xl font-bold">Heavyweight Rugby Wear</h3>
+                                        <p class="text-xs text-slate-300 mt-1">Reinforced double stitching designed for high-impact performance.</p>
                                     </div>
-
                                 </div>
 
-
-                                <!-- Slide 3 -->
                                 <div class="swiper-slide relative">
-
-                                    <img
-                                        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=85"
-                                        alt="Athletics"
-                                        class="w-full h-[300px] sm:h-[380px] object-cover">
-
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-
-                                        <span class="bg-amber-500 px-3 py-1 rounded-lg text-[10px] font-bold w-max mb-2">
-                                            ULTRA LIGHT
-                                        </span>
-
-                                        <h3 class="text-xl font-bold">
-                                            Athletic Track Wear
-                                        </h3>
-
-                                        <p class="text-xs text-slate-300 mt-1">
-                                            Technical fabric designed for speed and comfort.
-                                        </p>
-
+                                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80" alt="Athletic Track Tops" class="w-full h-[320px] sm:h-[380px] object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent flex flex-col justify-end p-6 text-white">
+                                        <span class="bg-amber-500 text-white font-bold text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-md w-max mb-2">Featherweight</span>
+                                        <h3 class="text-xl font-bold">Athletic & Marathon Singlets</h3>
+                                        <p class="text-xs text-slate-300 mt-1">Ultra-light anti-friction technical fabrics tailored for endurance.</p>
                                     </div>
-
                                 </div>
 
                             </div>
-
                             <div class="swiper-button-next"></div>
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-pagination"></div>
+                        </div>
 
+                        <div class="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-slate-200/80 text-xs">
+                            <div class="bg-white/80 p-3 rounded-xl border border-slate-200/60 flex items-center justify-between">
+                                <div>
+                                    <span class="text-slate-400 text-[10px] block font-semibold">Fabric Efficiency</span>
+                                    <span class="font-extrabold text-emerald-600">+24.2%</span>
+                                </div>
+                                <i class="fa-solid fa-chart-line text-emerald-500"></i>
+                            </div>
+                            <div class="bg-white/80 p-3 rounded-xl border border-slate-200/60 flex items-center justify-between">
+                                <div>
+                                    <span class="text-slate-400 text-[10px] block font-semibold">Avg Turnaround</span>
+                                    <span class="font-extrabold text-brandViolet">10-14 Days</span>
+                                </div>
+                                <i class="fa-solid fa-bolt text-brandViolet"></i>
+                            </div>
                         </div>
 
                     </div>
-
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- STATS -->
-    <section class="py-10 bg-white border-y border-slate-200">
-
+    <section class="py-12 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-
-                <div class="p-5 rounded-2xl bg-surfaceCanvas border border-slate-200">
-                    <span class="text-xs font-bold text-slate-400 uppercase">
-                        Quality
-                    </span>
-
-                    <div class="text-xl font-black mt-2">
-                        Grade-A Fabric
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="p-6 rounded-2xl bg-surfaceCanvas border border-slate-200/80">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase text-slate-400">Reliability Standard</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">99.99% Guaranteed</span>
                     </div>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Durable & color-fast.
-                    </p>
+                    <div class="text-3xl font-black text-slate-900">99.999%</div>
+                    <p class="text-xs text-slate-500 mt-1">Guaranteed fabric durability & color retention assurance.</p>
                 </div>
 
-
-                <div class="p-5 rounded-2xl bg-surfaceCanvas border border-slate-200">
-
-                    <span class="text-xs font-bold text-slate-400 uppercase">
-                        Delivery
-                    </span>
-
-                    <div class="text-xl font-black text-brandViolet mt-2">
-                        10-14 Days
+                <div class="p-6 rounded-2xl bg-surfaceCanvas border border-slate-200/80">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase text-slate-400">Production Engine</span>
+                        <span class="bg-indigo-100 text-brandViolet text-[10px] font-extrabold px-2 py-0.5 rounded-full">14.2x Faster</span>
                     </div>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Fast manufacturing.
-                    </p>
-
+                    <div class="text-3xl font-black text-slate-900">14.2x</div>
+                    <p class="text-xs text-slate-500 mt-1">Accelerated sublimation pipeline compared to conventional units.</p>
                 </div>
 
-
-                <div class="p-5 rounded-2xl bg-surfaceCanvas border border-slate-200">
-
-                    <span class="text-xs font-bold text-slate-400 uppercase">
-                        Capacity
-                    </span>
-
-                    <div class="text-xl font-black mt-2">
-                        400K+ Units
+                <div class="p-6 rounded-2xl bg-surfaceCanvas border border-slate-200/80">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase text-slate-400">Global Logistics</span>
+                        <span class="bg-emerald-100 text-emerald-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full">Islandwide</span>
                     </div>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Annual production.
-                    </p>
-
+                    <div class="text-3xl font-black text-slate-900">420K+</div>
+                    <p class="text-xs text-slate-500 mt-1">Annual athletic units executed and delivered across Sri Lanka.</p>
                 </div>
 
-
-                <div class="p-5 rounded-2xl bg-surfaceCanvas border border-slate-200">
-
-                    <span class="text-xs font-bold text-slate-400 uppercase">
-                        Design
-                    </span>
-
-                    <div class="text-xl font-black text-emerald-600 mt-2">
-                        Free Mockups
+                <div class="p-6 rounded-2xl bg-surfaceCanvas border border-slate-200/80">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-xs font-bold uppercase text-slate-400">Order Latency</span>
+                        <span class="bg-indigo-100 text-brandViolet text-[10px] font-extrabold px-2 py-0.5 rounded-full">&lt; 35 Hours</span>
                     </div>
-
-                    <p class="text-xs text-slate-500 mt-1">
-                        Digital concepts.
-                    </p>
-
+                    <div class="text-3xl font-black text-slate-900">&lt; 35h</div>
+                    <p class="text-xs text-slate-500 mt-1">Rapid digital artwork rendering to sample proof dispatch.</p>
                 </div>
 
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- PRODUCTS -->
-    <section id="catalog" class="py-16 bg-surfaceCanvas">
-
+    <section id="catalog" class="py-20 bg-surfaceCanvas">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center max-w-3xl mx-auto mb-10 reveal">
-
-                <span class="bg-brandVioletLight text-brandViolet font-bold text-xs uppercase px-3 py-1.5 rounded-full border border-indigo-200">
-                    Product Catalog
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-brandVioletLight text-brandViolet font-extrabold text-xs uppercase px-3.5 py-1.5 rounded-full tracking-wider inline-block mb-3 border border-indigo-200">
+                    Platform Capability
                 </span>
-
-                <h2 class="text-3xl sm:text-5xl font-black text-slate-900 mt-4">
-                    Explore Sportswear Range
-                </h2>
-
-                <p class="text-slate-600 text-sm mt-3">
-                    Find professional sportswear and custom team apparel.
-                </p>
-
+                <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Engineered for Mission-Critical Apparel Scale</h2>
+                <p class="text-slate-600 text-sm sm:text-base mt-3">Everything sports clubs and educational institutions need to design, customize, and order bulk teamwear.</p>
             </div>
 
-
-            <!-- Mode -->
             <div class="flex justify-center mb-8">
-
-                <div class="bg-white p-1.5 rounded-2xl border border-slate-200 flex gap-2">
-
-                    <button id="btn-mode-sport"
-                        onclick="setMode('sport')"
-                        class="flex-1 py-3 px-5 rounded-xl font-bold text-xs bg-brandViolet text-white">
-
-                        <i class="fa-solid fa-trophy mr-1"></i>
-
-                        Shop by Sport
-
+                <div class="bg-white p-1.5 rounded-2xl border border-slate-200 flex items-center gap-2 max-w-md w-full shadow-sm">
+                    <button id="btn-mode-sport" onclick="setMode('sport')" 
+                            class="flex-1 py-3 px-6 rounded-xl font-extrabold text-sm transition-all duration-300 flex items-center justify-center gap-2 bg-brandViolet text-white shadow-md shadow-brandViolet/20">
+                        <i class="fa-solid fa-trophy text-xs"></i>
+                        <span>Shop by Sport</span>
                     </button>
-
-                    <button id="btn-mode-category"
-                        onclick="setMode('category')"
-                        class="flex-1 py-3 px-5 rounded-xl font-bold text-xs text-slate-600">
-
-                        <i class="fa-solid fa-box mr-1"></i>
-
-                        Category
-
+                    
+                    <button id="btn-mode-category" onclick="setMode('category')" 
+                            class="flex-1 py-3 px-6 rounded-xl font-extrabold text-sm transition-all duration-300 flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900">
+                        <i class="fa-solid fa-boxes-stacked text-xs"></i>
+                        <span>Item Category</span>
                     </button>
-
                 </div>
-
             </div>
 
-
-            <!-- Search -->
-            <div class="synthetix-card p-5 rounded-2xl mb-8">
-
+            <div class="synthetix-card p-5 rounded-2xl mb-10">
                 <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-
+                    
                     <div class="relative w-full md:w-80">
-
-                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
-
-                        <input
-                            type="text"
-                            id="searchInput"
-                            onkeyup="filterProducts()"
-                            placeholder="Search products..."
-                            class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandViolet">
-
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Search jerseys, medals, bags..." 
+                               class="w-full pl-11 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brandViolet focus:bg-white transition-all">
                     </div>
 
-                    <div id="filterBadges"
-                        class="flex flex-wrap gap-2">
-                    </div>
+                    <div id="filterBadges" class="flex flex-wrap gap-2 w-full md:w-auto justify-start md:justify-end">
+                        </div>
+                </div>
+            </div>
 
+            <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>
+
+            <div id="noResults" class="hidden text-center py-16">
+                <i class="fa-solid fa-box-open text-5xl text-slate-300 mb-4 block"></i>
+                <h3 class="text-lg font-bold text-slate-700">No matching apparel models found</h3>
+                <p class="text-xs text-slate-500 mt-1">Try searching for another keyword or reset active filters.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="mb-12">
+                <span class="text-brandViolet font-extrabold text-xs uppercase tracking-widest block mb-1">Reference Architecture</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Pre-Built Industry Blueprints & Production Models</h2>
+                <p class="text-slate-600 text-sm mt-2">Explore validated apparel architectures ready to deploy directly into enterprise clusters.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="synthetix-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80" alt="Corporate Apparel" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-brandViolet text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Corporate Blueprint</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold uppercase text-brandViolet tracking-wider block mb-1">Institutional Solutions</span>
+                            <h3 class="font-bold text-lg text-slate-900">Custom Corporate Executive Apparel</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Precision embroidered polo shirts, executive blazers, and corporate event merchandise with high color consistency.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="w-full bg-slate-900 hover:bg-brandViolet text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Deploy Blueprint</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="synthetix-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1577705998148-6da4f3963bc8?auto=format&fit=crop&w=800&q=80" alt="Academic Sportswear" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">Academic Ready</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold uppercase text-emerald-600 tracking-wider block mb-1">Academic & Sports House</span>
+                            <h3 class="font-bold text-lg text-slate-900">Inter-House Sports & School Kits</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Multi-house color-coded sports tees, tracksuits, and athletic vests crafted for intense school tournaments.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="w-full bg-slate-900 hover:bg-brandViolet text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Deploy Blueprint</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="synthetix-card rounded-2xl overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-slate-100">
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Pro Sports Kits" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-amber-500 text-white text-[10px] font-bold px-2.5 py-1 rounded-md">High Performance</span>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold uppercase text-amber-600 tracking-wider block mb-1">Pro Athletes</span>
+                            <h3 class="font-bold text-lg text-slate-900">Professional League Matchday Gear</h3>
+                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">Full-sublimation match jerseys with anti-perspiration breathability and high-stretch ergonomic fits.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#contact" class="w-full bg-slate-900 hover:bg-brandViolet text-white font-bold py-3 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors">
+                            <span>Deploy Blueprint</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-
-            <!-- Products -->
-            <div id="productGrid"
-                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-            </div>
-
-
-            <!-- No Results -->
-            <div id="noResults"
-                class="hidden text-center py-16">
-
-                <i class="fa-solid fa-box-open text-5xl text-slate-300 mb-4"></i>
-
-                <h3 class="font-bold text-slate-700">
-                    No products found
-                </h3>
-
-            </div>
-
         </div>
-
     </section>
 
-
-    <!-- ORDER PROCESS -->
-    <section id="custom-process"
-        class="py-16 bg-white border-y border-slate-200">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center mb-12">
-
-                <span class="bg-brandVioletLight text-brandViolet font-bold text-xs uppercase px-3 py-1.5 rounded-full">
-                    Simple Ordering
-                </span>
-
-                <h2 class="text-3xl sm:text-4xl font-black mt-4">
-                    How to Order
-                </h2>
-
-                <p class="text-slate-500 text-sm mt-2">
-                    Professional team kits in three easy steps.
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-brandViolet via-indigo-600 to-purple-700 text-white rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+            <div class="relative z-10 max-w-xl">
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">Accelerate your enterprise apparel roadmaps today.</h2>
+                <p class="text-indigo-100 text-sm mt-3 leading-relaxed">
+                    Start building production-grade team kits with 50,000 free monthly vector credits, full telemetry suite, and multi-cloud runtime access.
                 </p>
-
             </div>
-
-
-            <div class="grid md:grid-cols-3 gap-7">
-
-                <div class="synthetix-card rounded-2xl p-7 text-center">
-
-                    <div class="w-14 h-14 mx-auto bg-indigo-50 text-brandViolet rounded-2xl flex items-center justify-center font-black text-xl">
-                        01
-                    </div>
-
-                    <h3 class="font-bold text-lg mt-5">
-                        Select & Send Logo
-                    </h3>
-
-                    <p class="text-xs text-slate-500 mt-2">
-                        Select your style and send your club logo and colors.
-                    </p>
-
-                </div>
-
-
-                <div class="synthetix-card rounded-2xl p-7 text-center">
-
-                    <div class="w-14 h-14 mx-auto bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center font-black text-xl">
-                        02
-                    </div>
-
-                    <h3 class="font-bold text-lg mt-5">
-                        Approve Design
-                    </h3>
-
-                    <p class="text-xs text-slate-500 mt-2">
-                        Review your custom digital mockup before production.
-                    </p>
-
-                </div>
-
-
-                <div class="synthetix-card rounded-2xl p-7 text-center">
-
-                    <div class="w-14 h-14 mx-auto bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center font-black text-xl">
-                        03
-                    </div>
-
-                    <h3 class="font-bold text-lg mt-5">
-                        Production & Delivery
-                    </h3>
-
-                    <p class="text-xs text-slate-500 mt-2">
-                        Manufacturing, quality inspection and islandwide delivery.
-                    </p>
-
-                </div>
-
+            <div class="relative z-10 flex flex-wrap gap-3 shrink-0">
+                <a href="#contact" class="bg-white text-slate-900 font-extrabold px-6 py-3.5 rounded-xl text-xs sm:text-sm hover:bg-slate-100 transition-all shadow-lg">
+                    Claim Free Sample Kit
+                </a>
+                <a href="tel:+94771234567" class="bg-brandVioletDark text-white border border-indigo-400/40 font-extrabold px-6 py-3.5 rounded-xl text-xs sm:text-sm hover:bg-indigo-900 transition-all">
+                    Speak with Solutions Architect
+                </a>
             </div>
-
         </div>
-
     </section>
 
-
-    <!-- ABOUT -->
-    <section id="about" class="py-16 bg-surfaceCanvas">
-
+    <section id="contact" class="py-16 bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
-
-                <div>
-
-                    <span class="text-brandViolet font-bold text-xs uppercase tracking-widest">
-                        About ILT Retail
-                    </span>
-
-                    <h2 class="text-3xl sm:text-4xl font-black mt-3">
-                        Precision Manufacturing Driven by Lean Systems
-                    </h2>
-
-                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mt-5">
-
-                        Supported by the Institute of Lean Technologies, ILT Retail
-                        applies modern production methodologies to create professional
-                        sportswear and institutional apparel across Sri Lanka.
-
-                    </p>
-
-
-                    <div class="grid sm:grid-cols-2 gap-4 mt-7">
-
-                        <div class="bg-white border border-slate-200 rounded-xl p-5">
-
-                            <i class="fa-solid fa-shield-halved text-brandViolet text-xl"></i>
-
-                            <h4 class="font-bold text-sm mt-3">
-                                Durable Stitching
-                            </h4>
-
-                            <p class="text-xs text-slate-500 mt-1">
-                                Built for demanding match conditions.
-                            </p>
-
-                        </div>
-
-
-                        <div class="bg-white border border-slate-200 rounded-xl p-5">
-
-                            <i class="fa-solid fa-droplet text-purple-600 text-xl"></i>
-
-                            <h4 class="font-bold text-sm mt-3">
-                                Vibrant Sublimation
-                            </h4>
-
-                            <p class="text-xs text-slate-500 mt-1">
-                                Long-lasting professional printing.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="bg-gradient-to-br from-brandViolet via-indigo-600 to-purple-700 text-white p-8 rounded-3xl shadow-xl">
-
-                    <h3 class="text-2xl font-black">
-                        Need Custom Sample Kits?
-                    </h3>
-
-                    <p class="text-indigo-100 text-sm leading-relaxed mt-3">
-
-                        Contact our team for volume discounts, fabric samples
-                        and free digital design concepts.
-
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-3 mt-7">
-
-                        <a href="tel:+94771234567"
-                            class="flex-1 bg-white text-slate-900 font-bold py-3.5 rounded-xl text-xs text-center">
-
-                            <i class="fa-solid fa-phone text-brandViolet mr-1"></i>
-
-                            Call Sales
-
-                        </a>
-
-                        <a href="https://wa.me/94771234567"
-                            target="_blank"
-                            class="flex-1 bg-emerald-600 text-white font-bold py-3.5 rounded-xl text-xs text-center">
-
-                            <i class="fa-brands fa-whatsapp mr-1"></i>
-
-                            WhatsApp
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact"
-        class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="bg-white rounded-3xl p-7 sm:p-10 border border-slate-200 shadow-sm">
-
-            <div class="grid lg:grid-cols-2 gap-10">
-
-                <!-- Info -->
-                <div>
-
-                    <span class="text-brandViolet font-bold text-xs uppercase">
-                        Contact Us
-                    </span>
-
-                    <h2 class="text-3xl font-black mt-3">
-                        Request Production Quote
-                    </h2>
-
-                    <p class="text-slate-600 text-sm leading-relaxed mt-4">
-                        Send your requirements and our team will contact you.
-                    </p>
-
-
-                    <div class="space-y-5 mt-8">
-
-                        <div class="flex gap-4 items-center">
-
-                            <div class="w-11 h-11 bg-indigo-50 text-brandViolet rounded-xl flex items-center justify-center">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-
-                            <div>
-
-                                <span class="text-xs text-slate-400 uppercase">
-                                    Phone
-                                </span>
-
-                                <p class="font-bold text-sm">
-                                    +94 77 123 4567
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="flex gap-4 items-center">
-
-                            <div class="w-11 h-11 bg-indigo-50 text-brandViolet rounded-xl flex items-center justify-center">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-
-                            <div>
-
-                                <span class="text-xs text-slate-400 uppercase">
-                                    Email
-                                </span>
-
-                                <p class="font-bold text-sm">
-                                    sales@retail.lk
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Form -->
-                <form id="inquiryForm"
-                    onsubmit="handleInquirySubmit(event)"
-                    class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
-
-                    <h3 class="font-bold text-lg">
-                        Apparel Order Form
-                    </h3>
-
-
+            <div class="bg-surfaceCanvas border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm">
+                <div class="grid lg:grid-cols-2 gap-12">
                     <div>
+                        <span class="text-brandViolet font-extrabold text-xs uppercase tracking-wider block mb-2">Direct Technical Consultation</span>
+                        <h2 class="text-3xl font-black text-slate-900 tracking-tight mb-4">Request Production Quotation</h2>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-8">
+                            Fill out your organization's custom requirements below. Our technical apparel architects will respond within 2 hours.
+                        </p>
+                        
+                        <div class="space-y-6 text-sm font-medium text-slate-700">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-brandViolet flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block uppercase font-bold">Direct Line</span>
+                                    <span>+94 (0) 77 123 4567 / +94 (0) 11 234 5678</span>
+                                </div>
+                            </div>
 
-                        <label class="block text-xs font-bold mb-1">
-                            Organization Name
-                        </label>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-brandViolet flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block uppercase font-bold">Enterprise Sales</span>
+                                    <span>sales@retail.lk | info@ilt.lk</span>
+                                </div>
+                            </div>
 
-                        <input
-                            type="text"
-                            id="formName"
-                            required
-                            placeholder="Organization / Club"
-                            class="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandViolet">
-
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-50 text-brandViolet flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block uppercase font-bold">Headquarters</span>
+                                    <span>Institute of Lean Technologies, Colombo, Sri Lanka</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    <form id="inquiryForm" onsubmit="handleInquirySubmit(event)" class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                        <h3 class="font-bold text-slate-900 text-lg mb-2">Apparel Order Form</h3>
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Organization / Club Name</label>
+                            <input type="text" id="formName" required placeholder="e.g. Royal College Athletics Club" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandViolet">
+                        </div>
 
-                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Contact Number</label>
+                                <input type="tel" id="formPhone" required placeholder="077 XXXXXXX" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandViolet">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Target Sport</label>
+                                <select id="formCategory" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandViolet">
+                                    <option>Cricket Apparel</option>
+                                    <option>Rugby Apparel</option>
+                                    <option>Athletics / Running</option>
+                                    <option>Football Kits</option>
+                                    <option>Medals & Awards</option>
+                                    <option>Other / General Bulk Order</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div>
-
-                            <label class="block text-xs font-bold mb-1">
-                                Contact Number
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="formPhone"
-                                required
-                                placeholder="077 XXXXXXX"
-                                class="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm">
-
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Quantity & Requirement Details</label>
+                            <textarea id="formDetails" required placeholder="Specify estimated unit quantities, sizes, or custom design preferences..." class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm h-24 focus:outline-none focus:ring-2 focus:ring-brandViolet"></textarea>
                         </div>
 
-
-                        <div>
-
-                            <label class="block text-xs font-bold mb-1">
-                                Sport
-                            </label>
-
-                            <select
-                                id="formCategory"
-                                class="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm">
-
-                                <option>Cricket</option>
-                                <option>Rugby</option>
-                                <option>Football</option>
-                                <option>Athletics</option>
-                                <option>Other</option>
-
-                            </select>
-
-                        </div>
-
-                    </div>
-
-
-                    <div>
-
-                        <label class="block text-xs font-bold mb-1">
-                            Requirements
-                        </label>
-
-                        <textarea
-                            id="formDetails"
-                            required
-                            placeholder="Quantity, sizes and requirements..."
-                            class="w-full px-4 py-3 border border-slate-200 rounded-xl text-sm h-28"></textarea>
-
-                    </div>
-
-
-                    <button type="submit"
-                        class="w-full bg-brandViolet hover:bg-brandVioletDark text-white font-bold py-3.5 rounded-xl transition">
-
-                        <i class="fa-solid fa-paper-plane mr-2"></i>
-
-                        Send Inquiry
-
-                    </button>
-
-                </form>
-
+                        <button type="submit" class="w-full bg-brandViolet hover:bg-brandVioletDark text-white font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Order Specification
+                        </button>
+                    </form>
+                </div>
             </div>
-
         </div>
-
     </section>
 
+    <div class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 p-2.5 flex gap-2 sm:hidden shadow-2xl">
+        <a href="tel:+94771234567" class="flex-1 bg-slate-900 text-white font-extrabold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call Sales
+        </a>
+        <a href="https://wa.me/94771234567" target="_blank" class="flex-1 bg-emerald-600 text-white font-extrabold py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+        </a>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 py-10 pb-24 md:pb-10 text-xs">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="flex flex-col md:flex-row justify-between gap-6">
-
-                <div>
-
-                    <h3 class="text-white font-bold text-lg">
-                        ILT Retail.lk
-                    </h3>
-
-                    <p class="mt-2">
-                        Institute of Lean Technologies, Sri Lanka
-                    </p>
-
-                </div>
-
-
-                <div class="flex gap-6 font-semibold">
-
-                    <a href="#home" class="hover:text-white">Home</a>
-                    <a href="#catalog" class="hover:text-white">Products</a>
-                    <a href="#contact" class="hover:text-white">Contact</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="border-t border-slate-800 mt-8 pt-6">
-
-                © 2026 ILT Retail. All rights reserved.
-
-            </div>
-
+    <div id="itemModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent"></div>
         </div>
+    </div>
 
+    <footer class="bg-slate-950 text-slate-400 py-12 text-xs border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800">
+                <div class="flex items-center gap-3">
+                    <div class="bg-brandViolet p-2 rounded-xl text-white font-black text-lg">ILT</div>
+                    <div>
+                        <span class="text-white font-bold text-sm block">Synthetix AI Style ILT Retail.lk</span>
+                        <span class="text-slate-500 text-[11px]">Institute of Lean Technologies, Sri Lanka</span>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-6 font-semibold">
+                    <a href="#home" class="hover:text-white transition-colors">Platform</a>
+                    <a href="#catalog" class="hover:text-white transition-colors">Products</a>
+                    <a href="#about" class="hover:text-white transition-colors">Architecture</a>
+                    <a href="#contact" class="hover:text-white transition-colors">Pricing</a>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+                <p>© 2026 Synthetix AI / ILT Apparel Technologies Inc. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-400">Security Whitepaper</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
-
-    <!-- ================= MOBILE BOTTOM NAV ================= -->
-
-    <nav class="mobile-nav md:hidden">
-
-        <div class="flex items-center justify-around">
-
-            <a href="#home"
-                class="mobile-nav-item active"
-                data-section="home">
-
-                <i class="fa-solid fa-house"></i>
-
-                <span>Home</span>
-
-            </a>
-
-
-            <a href="#catalog"
-                class="mobile-nav-item"
-                data-section="catalog">
-
-                <i class="fa-solid fa-bag-shopping"></i>
-
-                <span>Products</span>
-
-            </a>
-
-
-            <a href="#custom-process"
-                class="mobile-nav-item"
-                data-section="custom-process">
-
-                <i class="fa-solid fa-clipboard-list"></i>
-
-                <span>Order</span>
-
-            </a>
-
-
-            <a href="#about"
-                class="mobile-nav-item"
-                data-section="about">
-
-                <i class="fa-solid fa-building"></i>
-
-                <span>About</span>
-
-            </a>
-
-
-            <button onclick="toggleMore()"
-                class="mobile-nav-item"
-                id="moreButton">
-
-                <i class="fa-solid fa-bars"></i>
-
-                <span>More</span>
-
-            </button>
-
-        </div>
-
-    </nav>
-
-
-    <!-- MORE OVERLAY -->
-    <div class="more-overlay"
-        id="moreOverlay"
-        onclick="closeMore()">
-    </div>
-
-
-    <!-- MORE DRAWER -->
-    <div class="more-drawer"
-        id="moreDrawer">
-
-        <div class="drawer-handle"></div>
-
-        <h3 class="font-black text-lg px-2 mb-3">
-            More Options
-        </h3>
-
-
-        <a href="#contact"
-            onclick="closeMore()"
-            class="drawer-item">
-
-            <div class="drawer-icon">
-                <i class="fa-solid fa-phone"></i>
-            </div>
-
-            <div>
-                <div>Contact Us</div>
-                <div class="text-xs text-slate-400 font-normal">
-                    Get a custom quotation
-                </div>
-            </div>
-
-        </a>
-
-
-        <a href="https://wa.me/94771234567"
-            target="_blank"
-            class="drawer-item">
-
-            <div class="drawer-icon bg-emerald-50 text-emerald-600">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-
-            <div>
-                <div>WhatsApp Sales</div>
-                <div class="text-xs text-slate-400 font-normal">
-                    Chat with our sales team
-                </div>
-            </div>
-
-        </a>
-
-
-        <a href="tel:+94771234567"
-            class="drawer-item">
-
-            <div class="drawer-icon bg-amber-50 text-amber-600">
-                <i class="fa-solid fa-phone-volume"></i>
-            </div>
-
-            <div>
-                <div>Call Sales</div>
-                <div class="text-xs text-slate-400 font-normal">
-                    +94 77 123 4567
-                </div>
-            </div>
-
-        </a>
-
-
-        <a href="#custom-process"
-            onclick="closeMore()"
-            class="drawer-item">
-
-            <div class="drawer-icon bg-purple-50 text-purple-600">
-                <i class="fa-solid fa-list-check"></i>
-            </div>
-
-            <div>
-                <div>Order Process</div>
-                <div class="text-xs text-slate-400 font-normal">
-                    How custom orders work
-                </div>
-            </div>
-
-        </a>
-
-    </div>
-
-
-    <!-- PRODUCT MODAL -->
-    <div id="itemModal"
-        class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
-
-        <div class="bg-white w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
-
-            <button onclick="closeModal()"
-                class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 text-xl">
-
-                <i class="fa-solid fa-xmark"></i>
-
-            </button>
-
-            <div id="modalContent"></div>
-
-        </div>
-
-    </div>
-
-
-    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-
     <script>
-
-        /* ================= SWIPER ================= */
-
+        // Hero Slider Setup
         const swiper = new Swiper('.heroSlider', {
-
             loop: true,
-
-            autoplay: {
-                delay: 4500,
-                disableOnInteraction: false
-            },
-
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            },
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            }
-
+            autoplay: { delay: 4500, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
         });
 
-
-        /* ================= PRODUCTS ================= */
-
+        // App State
         let currentMode = 'sport';
         let currentFilter = 'All';
 
-
+        // Products DB with High-Res Unsplash Images
         const products = [
-
-            {
-                id: 1,
-                title: 'Pro Sublimated Cricket Jersey',
-                sport: 'Cricket',
-                category: 'Tops',
-                price: 'Rs. 2,950',
-                img: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=700&q=85',
-                desc: 'Moisture-wicking micro-mesh fabric engineered for high temperature athletic matches.'
+            { 
+                id: 1, 
+                title: 'Pro Sublimated Cricket Jersey', 
+                sport: 'Cricket', 
+                category: 'Tops', 
+                price: 'Rs. 2,950', 
+                img: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=80',
+                desc: 'Moisture-wicking micro-mesh fabric engineered for high temperature athletic matches.' 
             },
-
-            {
-                id: 2,
-                title: 'Heavyweight Rugby Pro Match Top',
-                sport: 'Rugby',
-                category: 'Tops',
-                price: 'Rs. 3,450',
-                img: 'https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=700&q=85',
-                desc: 'Reinforced tear-resistant design built specifically for contact rugby.'
+            { 
+                id: 2, 
+                title: 'Heavyweight Rugby Pro Match Top', 
+                sport: 'Rugby', 
+                category: 'Tops', 
+                price: 'Rs. 3,450', 
+                img: 'https://images.unsplash.com/photo-1517649763962-0c623266010b?auto=format&fit=crop&w=600&q=80',
+                desc: 'Reinforced tear-proof stretch collar designed specifically for contact rugby events.' 
             },
-
-            {
-                id: 3,
-                title: 'Featherweight Track Singlet',
-                sport: 'Athletics',
-                category: 'Tops',
-                price: 'Rs. 2,100',
-                img: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=700&q=85',
-                desc: 'Ergonomic friction-free cut designed for running and athletics.'
+            { 
+                id: 3, 
+                title: 'Featherweight Track Singlet', 
+                sport: 'Athletics', 
+                category: 'Tops', 
+                price: 'Rs. 2,100', 
+                img: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80',
+                desc: 'Ergonomic friction-free cut tailored for track, marathon, and field events.' 
             },
-
-            {
-                id: 4,
-                title: 'Athletic Match Socks',
-                sport: 'Cricket',
-                category: 'Socks',
-                price: 'Rs. 650',
-                img: 'https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?auto=format&fit=crop&w=700&q=85',
-                desc: 'High-density padded support for athletic performance.'
+            { 
+                id: 4, 
+                title: 'Anti-Blister Athletic Match Socks', 
+                sport: 'Cricket', 
+                category: 'Socks', 
+                price: 'Rs. 650', 
+                img: 'https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?auto=format&fit=crop&w=600&q=80',
+                desc: 'High-density padded cotton heel support for explosive lateral movements.' 
             },
-
-            {
-                id: 5,
-                title: 'Custom Finisher Medals',
-                sport: 'Athletics',
-                category: 'Awards',
-                price: 'Rs. 450',
-                img: 'https://images.unsplash.com/photo-1618517047922-d18a5a363719?auto=format&fit=crop&w=700&q=85',
-                desc: 'Custom designed medals with personalized event branding.'
+            { 
+                id: 5, 
+                title: 'Custom Molded Finisher Medals', 
+                sport: 'Athletics', 
+                category: 'Awards', 
+                price: 'Rs. 450', 
+                img: 'https://images.unsplash.com/photo-1618517047922-d18a5a363719?auto=format&fit=crop&w=600&q=80',
+                desc: 'Molded die-cast alloy medals with fully customized sublimated neck ribbons.' 
             },
-
-            {
-                id: 6,
-                title: 'Team Equipment Duffle Bag',
-                sport: 'Football',
-                category: 'Bags',
-                price: 'Rs. 2,800',
-                img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=85',
-                desc: 'Heavy-duty water resistant team equipment bag.'
+            { 
+                id: 6, 
+                title: 'Team Equipment Duffle Bag', 
+                sport: 'Football', 
+                category: 'Bags', 
+                price: 'Rs. 2,800', 
+                img: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80',
+                desc: 'Heavy-duty water repellent nylon duffle printed with club logos and numbers.' 
             }
-
         ];
 
-
         function setMode(mode) {
-
             currentMode = mode;
             currentFilter = 'All';
-
-            const sportBtn =
-                document.getElementById('btn-mode-sport');
-
-            const categoryBtn =
-                document.getElementById('btn-mode-category');
-
+            
+            const btnSport = document.getElementById('btn-mode-sport');
+            const btnCategory = document.getElementById('btn-mode-category');
 
             if (mode === 'sport') {
-
-                sportBtn.className =
-                    'flex-1 py-3 px-5 rounded-xl font-bold text-xs bg-brandViolet text-white shadow-md';
-
-                categoryBtn.className =
-                    'flex-1 py-3 px-5 rounded-xl font-bold text-xs text-slate-600';
-
+                btnSport.className = "flex-1 py-3 px-6 rounded-xl font-extrabold text-sm transition-all duration-300 flex items-center justify-center gap-2 bg-brandViolet text-white shadow-md shadow-brandViolet/20";
+                btnCategory.className = "flex-1 py-3 px-6 rounded-xl font-extrabold text-sm transition-all duration-300 flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900";
             } else {
-
-                categoryBtn.className =
-                    'flex-1 py-3 px-5 rounded-xl font-bold text-xs bg-brandViolet text-white shadow-md';
-
-                sportBtn.className =
-                    'flex-1 py-3 px-5 rounded-xl font-bold text-xs text-slate-600';
-
+                btnCategory.className = "flex-1 py-3 px-6 rounded-xl font-extrabold text-sm transition-all duration-300 flex items-center justify-center gap-2 bg-brandViolet text-white shadow-md shadow-brandViolet/20";
+                btnSport.className = "flex-1 py-3 px-6 rounded-xl font-extrabold text-sm transition-all duration-300 flex items-center justify-center gap-2 text-slate-600 hover:text-slate-900";
             }
 
             renderBadges();
             filterProducts();
-
         }
-
 
         function renderBadges() {
+            const container = document.getElementById('filterBadges');
+            let options = currentMode === 'sport' ? ['All', 'Cricket', 'Rugby', 'Athletics', 'Football'] : ['All', 'Tops', 'Socks', 'Awards', 'Bags'];
 
-            const container =
-                document.getElementById('filterBadges');
-
-
-            const options =
-                currentMode === 'sport'
-
-                    ? ['All', 'Cricket', 'Rugby', 'Athletics', 'Football']
-
-                    : ['All', 'Tops', 'Socks', 'Awards', 'Bags'];
-
-
-            container.innerHTML =
-                options.map(option => `
-
-                    <button
-                        onclick="setFilter('${option}')"
-                        class="px-3 py-1.5 rounded-lg text-xs font-bold transition
-                        ${currentFilter === option
-                            ? 'bg-brandViolet text-white'
-                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
-
-                        ${option}
-
-                    </button>
-
-                `).join('');
-
+            container.innerHTML = options.map(opt => `
+                <button onclick="setFilter('${opt}')" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${currentFilter === opt ? 'bg-brandViolet text-white shadow-sm' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+                    ${opt}
+                </button>
+            `).join('');
         }
-
 
         function setFilter(filter) {
-
             currentFilter = filter;
-
             renderBadges();
             filterProducts();
-
         }
-
 
         function filterProducts() {
+            const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+            const grid = document.getElementById('productGrid');
+            const noResults = document.getElementById('noResults');
 
-            const search =
-                document.getElementById('searchInput')
-                .value
-                .toLowerCase();
+            const filtered = products.filter(p => {
+                const matchesMode = currentFilter === 'All' || (currentMode === 'sport' ? p.sport === currentFilter : p.category === currentFilter);
+                const matchesSearch = p.title.toLowerCase().includes(searchQuery) || p.desc.toLowerCase().includes(searchQuery);
+                return matchesMode && matchesSearch;
+            });
 
-
-            const grid =
-                document.getElementById('productGrid');
-
-
-            const noResults =
-                document.getElementById('noResults');
-
-
-            const filtered =
-                products.filter(product => {
-
-                    const matchesFilter =
-                        currentFilter === 'All'
-
-                        ||
-
-                        (
-                            currentMode === 'sport'
-                                ? product.sport === currentFilter
-                                : product.category === currentFilter
-                        );
-
-
-                    const matchesSearch =
-                        product.title.toLowerCase().includes(search)
-                        ||
-                        product.desc.toLowerCase().includes(search);
-
-
-                    return matchesFilter && matchesSearch;
-
-                });
-
-
-            if (!filtered.length) {
-
+            if (filtered.length === 0) {
                 grid.innerHTML = '';
                 noResults.classList.remove('hidden');
-
-                return;
-
-            }
-
-
-            noResults.classList.add('hidden');
-
-
-            grid.innerHTML =
-                filtered.map(product => `
-
-                    <div class="synthetix-card rounded-2xl p-5 group flex flex-col justify-between">
-
+            } else {
+                noResults.classList.add('hidden');
+                grid.innerHTML = filtered.map(p => `
+                    <div class="synthetix-card rounded-2xl p-5 flex flex-col justify-between group">
                         <div>
-
-                            <div class="relative h-48 rounded-xl overflow-hidden bg-slate-100 mb-4">
-
-                                <img
-                                    src="${product.img}"
-                                    alt="${product.title}"
-                                    loading="lazy"
-                                    class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-
-                                <div class="absolute top-3 left-3 flex gap-2">
-
-                                    <span class="bg-white/95 text-slate-800 px-2 py-1 rounded text-[10px] font-bold">
-
-                                        ${product.sport}
-
-                                    </span>
-
-                                    <span class="bg-brandViolet text-white px-2 py-1 rounded text-[10px] font-bold">
-
-                                        ${product.category}
-
-                                    </span>
-
+                            <div class="relative h-48 rounded-xl overflow-hidden mb-4 bg-slate-100">
+                                <img src="${p.img}" alt="${p.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute top-3 left-3 flex gap-1.5">
+                                    <span class="text-[10px] font-bold uppercase bg-white/90 backdrop-blur-md text-slate-800 px-2 py-0.5 rounded">${p.sport}</span>
+                                    <span class="text-[10px] font-bold uppercase bg-brandViolet text-white px-2 py-0.5 rounded">${p.category}</span>
                                 </div>
-
                             </div>
-
-
-                            <h3 class="font-bold text-base text-slate-900">
-
-                                ${product.title}
-
-                            </h3>
-
-
-                            <p class="text-xs text-slate-500 mt-2 leading-relaxed">
-
-                                ${product.desc}
-
-                            </p>
-
+                            <h3 class="font-extrabold text-base text-slate-900 group-hover:text-brandViolet transition-colors">${p.title}</h3>
+                            <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">${p.desc}</p>
                         </div>
-
-
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
-
+                        
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                             <div>
-
-                                <span class="text-[10px] uppercase text-slate-400 font-bold">
-                                    Estimated Rate
-                                </span>
-
-                                <div class="font-black text-sm">
-
-                                    ${product.price}
-
-                                </div>
-
+                                <span class="text-[10px] text-slate-400 uppercase font-bold block">Bulk Rate Est.</span>
+                                <span class="font-black text-slate-900 text-sm">${p.price}</span>
                             </div>
-
-
-                            <button
-                                onclick="openModal('${product.title}', '${product.price}')"
-                                class="bg-brandViolet hover:bg-brandVioletDark text-white px-4 py-2.5 rounded-xl text-xs font-bold">
-
-                                <i class="fa-solid fa-paper-plane mr-1"></i>
-
-                                Quote
-
+                            <button onclick="openModal('${p.title}', '${p.price}')" class="bg-brandViolet hover:bg-brandVioletDark text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1.5 transition-colors shadow-md shadow-brandViolet/20">
+                                <i class="fa-solid fa-paper-plane text-[10px]"></i> Quote
                             </button>
-
                         </div>
-
                     </div>
-
                 `).join('');
-
+            }
         }
-
-
-        /* ================= PRODUCT MODAL ================= */
 
         function openModal(title, price) {
-
-            const modal =
-                document.getElementById('itemModal');
-
-
-            const content =
-                document.getElementById('modalContent');
-
-
-            const message =
-                encodeURIComponent(
-                    `Hi ILT Retail, I am interested in ordering: ${title}`
-                );
-
+            const modal = document.getElementById('itemModal');
+            const content = document.getElementById('modalContent');
 
             content.innerHTML = `
-
-                <span class="text-brandViolet font-bold text-xs uppercase">
-                    Factory Inquiry
-                </span>
-
-                <h3 class="text-xl font-black mt-2">
-                    ${title}
-                </h3>
-
-                <p class="text-sm text-slate-500 mt-2 mb-6">
-
-                    Estimated rate around ${price}.
-                    Contact us for bulk discounts.
-
-                </p>
-
-
+                <span class="text-brandViolet font-extrabold text-xs uppercase tracking-wider block mb-1">Synthetix Pipeline Inquiry</span>
+                <h3 class="font-bold text-slate-900 text-xl mb-1">${title}</h3>
+                <p class="text-xs text-slate-500 mb-6">Estimated rate around ${price}. Contact sales for volume tier discounts.</p>
+                
                 <div class="space-y-3">
-
-                    <a
-                        href="https://wa.me/94771234567?text=${message}"
-                        target="_blank"
-                        class="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-xl text-sm flex justify-center items-center gap-2">
-
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-
-                        WhatsApp Direct Order
-
+                    <a href="https://wa.me/94771234567?text=Hi%20ILT%20Retail,%20I%20am%20interested%20in%20ordering:%20${encodeURIComponent(title)}" target="_blank" 
+                       class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-xl text-xs flex items-center justify-center gap-2 shadow-md">
+                        <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Direct Order
                     </a>
-
-
-                    <a
-                        href="tel:+94771234567"
-                        class="w-full bg-slate-900 text-white font-bold py-3.5 rounded-xl text-sm flex justify-center items-center gap-2">
-
-                        <i class="fa-solid fa-phone"></i>
-
-                        Call Sales Hotline
-
+                    
+                    <a href="tel:+94771234567" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-extrabold py-3.5 rounded-xl text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Call Hotline: +94 77 123 4567
                     </a>
-
                 </div>
-
             `;
-
-
             modal.classList.remove('hidden');
-            modal.classList.add('flex');
-
         }
-
 
         function closeModal() {
-
-            const modal =
-                document.getElementById('itemModal');
-
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-
+            document.getElementById('itemModal').classList.add('hidden');
         }
 
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const category = document.getElementById('formCategory').value;
+            const details = document.getElementById('formDetails').value;
 
-        /* ================= FORM ================= */
-
-        function handleInquirySubmit(event) {
-
-            event.preventDefault();
-
-
-            const name =
-                document.getElementById('formName').value;
-
-
-            const phone =
-                document.getElementById('formPhone').value;
-
-
-            const category =
-                document.getElementById('formCategory').value;
-
-
-            const details =
-                document.getElementById('formDetails').value;
-
-
-            const message = encodeURIComponent(
-
-                `*New Order Inquiry*
-
-*Organization:* ${name}
-*Phone:* ${phone}
-*Sport:* ${category}
-*Requirements:* ${details}`
-
-            );
-
-
-            window.open(
-                `https://wa.me/94771234567?text=${message}`,
-                '_blank'
-            );
-
+            const message = `*New Enterprise Order Inquiry*%0A*Name:* ${encodeURIComponent(name)}%0A*Phone:* ${encodeURIComponent(phone)}%0A*Category:* ${encodeURIComponent(category)}%0A*Details:* ${encodeURIComponent(details)}`;
+            window.open(`https://wa.me/94771234567?text=${message}`, '_blank');
         }
-
-
-        /* ================= MOBILE MORE MENU ================= */
-
-        function toggleMore() {
-
-            const drawer =
-                document.getElementById('moreDrawer');
-
-            const overlay =
-                document.getElementById('moreOverlay');
-
-
-            drawer.classList.toggle('active');
-            overlay.classList.toggle('active');
-
-        }
-
-
-        function closeMore() {
-
-            document
-                .getElementById('moreDrawer')
-                .classList.remove('active');
-
-
-            document
-                .getElementById('moreOverlay')
-                .classList.remove('active');
-
-        }
-
-
-        /* ================= MOBILE ACTIVE NAV ================= */
-
-        const navItems =
-            document.querySelectorAll('.mobile-nav-item[data-section]');
-
-
-        navItems.forEach(item => {
-
-            item.addEventListener('click', () => {
-
-                navItems.forEach(nav =>
-                    nav.classList.remove('active')
-                );
-
-                item.classList.add('active');
-
-            });
-
-        });
-
-
-        /* ================= AUTO ACTIVE SECTION ================= */
-
-        const sections =
-            document.querySelectorAll(
-                '#home, #catalog, #custom-process, #about'
-            );
-
-
-        const observer =
-            new IntersectionObserver(entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        const id =
-                            entry.target.id;
-
-
-                        navItems.forEach(item => {
-
-                            item.classList.toggle(
-                                'active',
-                                item.dataset.section === id
-                            );
-
-                        });
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.45
-            });
-
-
-        sections.forEach(section =>
-            observer.observe(section)
-        );
-
-
-        /* ================= SCROLL REVEAL ================= */
-
-        const revealElements =
-            document.querySelectorAll('.reveal');
-
-
-        const revealObserver =
-            new IntersectionObserver(entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add('show');
-
-                    }
-
-                });
-
-            }, {
-                threshold: 0.15
-            });
-
-
-        revealElements.forEach(element =>
-            revealObserver.observe(element)
-        );
-
-
-        /* ================= INITIAL LOAD ================= */
 
         setMode('sport');
-
     </script>
-
 </body>
 </html>
-```
